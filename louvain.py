@@ -1,21 +1,14 @@
 # -*- coding:utf-8 -*-
-
+from __future__ import print_function
 import networkx as nx
 import time
 import community
 import sys
-from __future__ import print_function
+from load_graph import load_graph
 
 def louvain():
     filename = sys.argv[1]
-    input = open(filename, 'r')
-    g = nx.DiGraph()
-    load_start = time.time()
-    for line in input:
-      arr = line.split('\t')
-      g.add_weighted_edges_from([(arr[0], arr[1], arr[3])])
-
-    load_end = time.time()
+    graph = load_graph(filename)
 
     partition_start = time.time()
     partition = community.best_partition(g)
@@ -25,7 +18,6 @@ def louvain():
     result = community.modularity(partition, g)
     community_end = time.time()
 
-    print('# load time ', load_end - load_start)
     print('# partition time ', partition_end - partition_start)
     print('# community time ', community_end - community_start)
 
