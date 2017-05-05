@@ -8,8 +8,11 @@ def main():
     graph = load_graph(filename)
     eigenvector_start = time.time()
     eigenvector = nx.eigenvector_centrality(graph)
-    eigenvector_end = time.time()
-    print('calculate time ', (eigenvector_end - eigenvector_start))
+    print('Eigenvector centrality time: %.5f' % (time.time() - eigenvector_start))
+
+    eigenvector_start = time.time()
+    eigenvector = nx.eigenvector_centrality_numpy(graph)
+    print('Eigenvector centrality with Numpy time: %.5f' % (time.time() - eigenvector_start))
 
 if __name__ == '__main__':
     main()
