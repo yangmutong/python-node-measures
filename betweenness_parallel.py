@@ -63,7 +63,7 @@ if __name__ == "__main__":
     print(nx.info(graph))
     print("\tParallel version")
     start = time.time()
-    bt = betweenness_centrality_parallel(graph, processes=process)
+    bt = betweenness_centrality_parallel(graph)
     print("\t\tTime: %.4F" % (time.time() - start))
     print("\t\tBetweenness centrality for node 0: %.5f" % (bt[0]))
     print("\tNon-Parallel version")
