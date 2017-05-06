@@ -10,7 +10,7 @@ def main():
     graph = load_graph(filename)
 
     cc_start = time.time()
-    cc = nx.clustering(g, weight='weight')
+    cc = nx.clustering(graph, weight='weight')
     cc_end = time.time()
 
     print('calculate time ', (cc_end - cc_start))
