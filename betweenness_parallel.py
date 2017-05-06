@@ -67,6 +67,6 @@ if __name__ == "__main__":
     print("\t\tTime: %.4F" % (time.time() - start))
     print("\tNon-Parallel version")
     start = time.time()
-    bt = nx.betweenness_centrality(G)
+    bt = nx.betweenness_centrality(graph)
     print("\t\tTime: %.4F seconds" % (time.time() - start))
     print("")
