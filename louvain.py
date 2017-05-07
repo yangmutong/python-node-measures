@@ -15,7 +15,7 @@ def louvain():
     partition_end = time.time()
 
     community_start = time.time()
-    result = community.modularity(partition, g)
+    result = community.modularity(partition, graph)
     community_end = time.time()
 
     print('# partition time ', partition_end - partition_start)
