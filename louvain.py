@@ -11,7 +11,7 @@ def louvain():
     graph = load_graph(filename)
 
     partition_start = time.time()
-    partition = community.best_partition(g)
+    partition = community.best_partition(graph)
     partition_end = time.time()
 
     community_start = time.time()
