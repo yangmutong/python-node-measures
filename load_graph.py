@@ -2,9 +2,11 @@ from __future__ import print_function
 import networkx as nx
 import time
 
-def load_graph(filename):
+def load_graph(filename, type='directed'):
     input = open(filename, 'r')
-    g = nx.DiGraph()
+    g = nx.Graph()
+    if type == 'directed':
+        g = nx.DiGraph()
     load_start = time.time()
     for line in input:
         arr = line.split('\t')

@@ -8,7 +8,7 @@ from load_graph import load_graph
 
 def louvain():
     filename = sys.argv[1]
-    graph = load_graph(filename)
+    graph = load_graph(filename, type='no-directed')
 
     partition_start = time.time()
     partition = community.best_partition(graph)
