@@ -16,4 +16,5 @@ def load_graph(filename, type='directed'):
     g.add_weighted_edges_from(edges)
     load_end = time.time()
     print('load time ', (load_end - load_start))
+    input.close()
     return g
