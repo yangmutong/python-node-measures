@@ -57,13 +57,13 @@ def betweenness_centrality_parallel(G, processes=None):
 if __name__ == "__main__":
     filename = sys.argv[1]
     graph = load_graph(filename)
-    process = sys.argv[2]
+    process = int(sys.argv[2])
     print("")
     print("Computing betweenness centrality for:")
     print(nx.info(graph))
     print("\tParallel version")
     start = time.time()
-    bt = betweenness_centrality_parallel(graph)
+    bt = betweenness_centrality_parallel(graph, processes=process)
     print("\t\tTime: %.4F" % (time.time() - start))
     print("\tNon-Parallel version")
     start = time.time()
