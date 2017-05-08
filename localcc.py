@@ -7,7 +7,7 @@ from load_graph import load_graph
 ## clustering API in NetworkX has not been implemented for directed graph
 def main():
     filename = sys.argv[1]
-    graph = load_graph(filename)
+    graph = load_graph(filename, type='undirected')
 
     cc_start = time.time()
     cc = nx.clustering(graph, weight='weight')
